@@ -105,10 +105,16 @@ jobs:
       run: |
         ./scripts/build_apk.sh
 
-    # Upload Artifact
+    # Upload Artifact 1
     - name: Upload Artifact
       uses: actions/upload-artifact@v2
       with:
-        path: mobile/build/outputs/apk/release
+        path: aw-android.apk
+        
+          # Upload Artifact 1
+    - name: Upload Artifact 2
+      uses: actions/upload-artifact@v2
+      with:
+        path: mobile/build/outputs/apk/release/mobile-release-unsigned.apk
 
     # TODO: Do release stuff
