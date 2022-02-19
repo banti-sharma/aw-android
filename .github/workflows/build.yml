@@ -103,6 +103,6 @@ jobs:
       env:
         ANDROID_NDK_HOME: ${{ steps.setup-ndk.outputs.ndk-path }}
       run: |
-        make build
+        ./scripts/build_apk.sh
 
     # TODO: Do release stuff
