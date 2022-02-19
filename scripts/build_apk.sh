@@ -12,7 +12,7 @@ fi
 
 ./gradlew assembleRelease
 mv mobile/build/outputs/apk/release/mobile-release-unsigned.apk $OUTPUT_NAME
-jarsigner -verbose -sigalg SHA1withRSA -storepass graphoun1 -keypass graphoun1 -digestalg RSA -keystore graphoun.jks $OUTPUT_NAME activitywatch
+jarsigner -verbose -sigalg RSA -storepass graphoun1 -keypass graphoun1 -digestalg RSA -keystore graphoun.jks $OUTPUT_NAME activitywatch
 jarsigner -verify $OUTPUT_NAME
 
 zipalign=$(find $ANDROID_HOME/build-tools -name "zipalign" -print | head -n 1)
