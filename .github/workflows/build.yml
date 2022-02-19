@@ -108,7 +108,7 @@ jobs:
     # Upload Artifact
     - name: Upload Artifact
       uses: actions/upload-artifact@v2
-        with:        
-          path: mobile/build/outputs/apk/release
+      with:
+        path: mobile/build/outputs/apk/release
 
     # TODO: Do release stuff
