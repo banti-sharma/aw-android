@@ -9,9 +9,14 @@ if [ -z $ANDROID_HOME ]; then
     exit 1
 fi
 
+if [ -z $storepass ]; then
+    echo "\$storepass and \$keypass need to be set"
+    exit 1
+fi
+
 ./gradlew assembleRelease
 mv mobile/build/outputs/apk/release/mobile-release-unsigned.apk $OUTPUT_NAME
-jarsigner -verbose -storepass graphoun1 -keypass graphoun1 -keystore watcher.jks $OUTPUT_NAME activitywatch
+jarsigner -verbose -sigalg SHA256withRSA -storepass graphoun1 -keystore watcher.keystore $OUTPUT_NAME activitywatch
 jarsigner -verify $OUTPUT_NAME
 
 zipalign=$(find $ANDROID_HOME/build-tools -name "zipalign" -print | head -n 1)
