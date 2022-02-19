@@ -105,10 +105,9 @@ jobs:
       run: |
         ./scripts/build_apk.sh
 
-    - name: upload-artifact
+    - name: Upload Artifact
       uses: actions/upload-artifact@v2
-        with:
-          name: android-watcher
+        with:        
           path: mobile/build/outputs/apk/release
 
     # TODO: Do release stuff
