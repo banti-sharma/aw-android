@@ -2,7 +2,6 @@
 jniLibs
 NDK
 mobile/src/main/assets/webui
-*.jks
 fastlane/*.json
 .bundle
 vendor
